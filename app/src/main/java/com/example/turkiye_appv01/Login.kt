@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.turkiye_appv01.databinding.ActivityLoginBinding
+import com.example.turkiye_appv01.view.CitysActivity
+import com.example.turkiye_appv01.view.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -27,7 +29,7 @@ class Login : AppCompatActivity() {
 
                     firebaseAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener{
                         if (it.isSuccessful){
-                            val intent= Intent(this,MainActivity::class.java)
+                            val intent= Intent(this, CitysActivity::class.java)
                             startActivity(intent)
                         }
                         else{
